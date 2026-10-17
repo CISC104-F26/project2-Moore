@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 		scale = scale + scale_speed
 	if Input.is_action_pressed("not_big"):
 		scale = scale - scale_speed
+
 func _get_global_mouse_position():
 		if Input.is_action_just_pressed("teleport"):
 			position=get_global_mouse_position()
