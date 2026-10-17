@@ -1,5 +1,15 @@
 [gd_scene format=3 uid="uid://dl2fd7fna17aq"]
 
+[ext_resource type="Script" uid="uid://gq5wwq8npyfp" path="res://player3d.gd" id="1_gn0ur"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_v2muc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_v2muc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1bnvj"]
+
+[sub_resource type="Environment" id="Environment_v2muc"]
+
 [node name="Part B" type="Control" unique_id=454535292]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +17,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1784180555]
+
+[node name="Player" type="MeshInstance3D" parent="Node3D" unique_id=658123854]
+mesh = SubResource("CapsuleMesh_v2muc")
+script = ExtResource("1_gn0ur")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D/Player" unique_id=1518891997]
+transform = Transform3D(1, 0, 0, 0, 0.941432, 0.33720285, 0, -0.33720285, 0.941432, 0, 0.88096225, 1.87378)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=515940830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9319994, 0, 0)
+mesh = SubResource("BoxMesh_v2muc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D" unique_id=210524014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2401848, 0, 0)
+mesh = SubResource("BoxMesh_1bnvj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D" unique_id=370156072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.350428)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" unique_id=1330130478]
+environment = SubResource("Environment_v2muc")

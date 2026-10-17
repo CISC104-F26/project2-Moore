@@ -1,5 +1,12 @@
 [gd_scene format=3 uid="uid://882xhjltjy03"]
 
+[ext_resource type="Texture2D" uid="uid://cmfmq2644lxvn" path="res://icon.svg" id="1_to4tk"]
+[ext_resource type="Script" uid="uid://btpvwk5jso5q" path="res://player.gd" id="1_ys316"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_v2muc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1bnvj"]
+
 [node name="Part A" type="Control" unique_id=2005674799]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +14,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1191149140]
+
+[node name="Player" type="Sprite2D" parent="Node2D" unique_id=1663709199]
+z_index = 1
+texture = ExtResource("1_to4tk")
+script = ExtResource("1_ys316")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D" unique_id=1979622753]
+mesh = SubResource("BoxMesh_v2muc")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Node2D" unique_id=1039028319]
+mesh = SubResource("BoxMesh_1bnvj")
